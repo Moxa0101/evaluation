@@ -65,8 +65,12 @@ function Form({ onSubmit, submissions }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name.trim() || !form.email.trim()) {
+    if (!form.name.trim() || !form.email.trim() || !form.email.trim() {
       alert("Name and email are required!");
+      return;
+    }
+     if (!/^[a-zA-Z\s]+$/.test(form.name.trim())) {
+      alert("Name must contain only letters and spaces!");
       return;
     }
 
